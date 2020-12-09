@@ -15,6 +15,11 @@ import axios from "axios";
  */
 
 export const getDonations = async () => {
-  const { data } = await axios.get("/api/donations");
-  return data;
+  const { datadonations } = await axios.get("/api/donations");
+  return datadonations;
+};
+
+export const getStock = async () => {
+  const { datastock } = await axios.get("/api/stock");
+  return datastock;
 };
