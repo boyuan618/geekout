@@ -30,7 +30,9 @@ function Home() {
           </p>
         </div>
       </section>
+      <h1>&nbsp;&nbsp;Donations</h1>
       <Donations />
+      <h1>&nbsp;&nbsp;Stocks</h1>
       <Stocks />
       <Footer />
     </div>

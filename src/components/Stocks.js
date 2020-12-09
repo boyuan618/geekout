@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { getDonations } from "../utils/fetch";
+import { getStocks } from "../utils/fetch";
 
-function renderEachCard(donationItem) {
+function renderEachCard(stockItem) {
   return (
     <div className="card">
-      <h3>{donationItem.name}</h3>
+      <h3>{stockItem.name}</h3>
       <span>
-        {donationItem.quantity} {donationItem.unit}
+        {stockItem.quantity} {stockItem.unit}
       </span>
     </div>
   );
@@ -27,21 +27,21 @@ function renderEachCard(donationItem) {
  *  Learn more about states and lifecycle hooks here: https://reactjs.org/docs/hooks-overview.html
  */
 
-function Donations() {
-  const [donations, setDonations] = useState([]);
+function Stocks() {
+  const [stocks, setStocks] = useState([]);
 
-  useEffect(loadDonations);
+  useEffect(loadStocks);
 
-  async function loadDonations() {
-    const data = await getDonations();
-    setDonations(data);
+  async function loadStocks() {
+    const data = await getStocks();
+    setStocks(data);
   }
 
   return (
     <section className="results">
-      <div className="container">{donations.map(renderEachCard)}</div>
+      <div className="container">{stocks.map(renderEachCard)}</div>
     </section>
   );
 }
 
-export default Donations;
+export default Stocks;
